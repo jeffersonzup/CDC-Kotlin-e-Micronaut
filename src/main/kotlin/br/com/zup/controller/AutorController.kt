@@ -15,10 +15,10 @@ class AutorController(var autorRepository: AutorRepository) {
     @Post
     fun cadastra(@Body @Valid request: AutorRequest) : HttpResponse<Any>{
         val autor = request.convertToAutor()
-        autorRepository.save(autor)
+        val autorSalvo = autorRepository.save(autor)
         val uri = UriBuilder.of("/autores/{id}")
             .expand(mutableMapOf(Pair("id", autor.id)))
-        return HttpResponse.created(uri)
+        return HttpResponse.ok(autorSalvo)
     }
 
 }
