@@ -21,7 +21,7 @@ class BuscaAutoresController(val autorRepository: AutorRepository) {
             return HttpResponse.ok(resposta)
         }
 
-        val existsEmail = autorRepository.findByEmail(email)
+        val existsEmail = autorRepository.buscaPorEmail(email)
 
         if (!existsEmail.isPresent) {
             return HttpResponse.notFound()
