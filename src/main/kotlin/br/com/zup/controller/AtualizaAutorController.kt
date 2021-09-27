@@ -9,6 +9,7 @@ import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.PathVariable
 import io.micronaut.http.annotation.Put
 import io.micronaut.validation.Validated
+import javax.transaction.Transactional
 import javax.validation.Valid
 
 @Validated
@@ -16,6 +17,7 @@ import javax.validation.Valid
 class AtualizaAutorController (val autorRepository: AutorRepository){
 
     @Put("/{id}")
+    @Transactional
     fun atualiza(@PathVariable id: Long, @Body @Valid autorRequest: AutorRequest): HttpResponse<Any>{
         val existsId = autorRepository.findById(id)
 
