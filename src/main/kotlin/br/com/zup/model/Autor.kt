@@ -11,7 +11,9 @@ import javax.persistence.Id
 class Autor (
     var nome: String,
     var email: String,
-    var descricao: String) {
+    var descricao: String,
+    val endereco: Endereco
+    ) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
