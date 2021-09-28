@@ -28,7 +28,7 @@ class AutorController(
         autorRepository.save(autor)
         val uri = UriBuilder.of("/autores/{id}")
             .expand(mutableMapOf(Pair("id", autor.id)))
-        return HttpResponse.ok(DetalheAutorResponse(autor))
+        return HttpResponse.created(uri)
     }
 
 }
