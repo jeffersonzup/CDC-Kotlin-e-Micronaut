@@ -18,7 +18,7 @@ data class AutorRequest(
 
 ) {
     fun convertToAutor(enderecoResponse: EnderecoResponse): Autor {
-        val endereco = Endereco(enderecoResponse, numero)
+        val endereco = Endereco(enderecoResponse, numero, cep)
         return Autor(nome, email, descricao, endereco)
     }
 }

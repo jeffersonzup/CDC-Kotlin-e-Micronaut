@@ -2,14 +2,8 @@ package br.com.zup.controller.response
 
 import br.com.zup.model.Autor
 
-class DetalheAutorResponse(autor: Autor) {
+data class DetalheAutorResponse(val nome: String, val email: String, val descricao: String) {
 
-    val nome = autor.nome
-    val email = autor.email
-    val descricao = autor.descricao
-    val logradouro = autor.endereco.logradouro
-    val numero = autor.endereco.numero
-    val localidade = autor.endereco.localidade
-    val uf = autor.endereco.uf
+    constructor(autor: Autor): this(autor.nome, autor.email, autor.descricao)
 
 }

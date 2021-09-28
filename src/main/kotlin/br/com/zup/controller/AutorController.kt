@@ -25,10 +25,10 @@ class AutorController(
 
         val autor = request.convertToAutor(enderecoResponse.body()!!)
 
-        val autorSalvo = autorRepository.save(autor)
+        autorRepository.save(autor)
         val uri = UriBuilder.of("/autores/{id}")
             .expand(mutableMapOf(Pair("id", autor.id)))
-        return HttpResponse.ok(DetalheAutorResponse(autorSalvo))
+        return HttpResponse.ok(DetalheAutorResponse(autor))
     }
 
 }
