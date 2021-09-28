@@ -50,6 +50,8 @@ dependencies {
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation("mysql:mysql-connector-java:8.0.26")
+
+    implementation("io.micronaut.xml:micronaut-jackson-xml")
 }
 
 
